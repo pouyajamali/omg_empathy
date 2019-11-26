@@ -12,9 +12,9 @@ Model 1 - Submission 1. Model 2 - Submission 2.
 * `pip install -r requirements.txt `
 
 ### Data Processing
-To get valence predictions on evey frames and the mutual laughter frame number, extract faces from video and run `python process_data.py` on trainset. For testset, run `python process_data_trainset.py`. 
+To get valence predictions on every frame and the mutual laughter frame number extract faces from video and run `python process_data.py` on trainset. For testset, run `python process_data_trainset.py`. 
 
-Specific the file paths in both scripts:
+Specify the file paths in both scripts:
 
 `path = ./path/to/groundtruth/labels`
 
@@ -26,13 +26,13 @@ Specific the file paths in both scripts:
 
 
 ### Model 1
-To train the model, run `python train_svm.py`. Specific the file paths in the script:
+To train the model, run `python train_svm.py`. Specify the file paths in the script to:
 
 `path = ./path/to/final/features/csv/files(trainset)`
 
 `savepath = ./path/to/save/svm/model`
 
-To test the model, run `python test_svm.py`. Specific the file paths in the script:
+To test the model, run `python test_svm.py`. Specify the file paths in the script to:
 
 `path = ./path/to/final/features/csv/files(testset)`
 
@@ -44,7 +44,7 @@ Processed features are provided in `./features_train/` and `./features_test/`.
 
 
 ### Model 2
-Input desired file `Subject_X_Story_X`
+Input desired file: `Subject_X_Story_X`
 
 * [non-verbal features]
 	- openSmile feature extraction tool [https://www.audeering.com/technology/opensmile/]
@@ -53,7 +53,7 @@ Input desired file `Subject_X_Story_X`
 	- tone analyzer (IBM watson) [https://tone-analyzer-demo.ng.bluemix.net/]	
 	- TextBlob python API [https://textblob.readthedocs.io/en/dev/]
 
-The audio of each video extracted (using ffmpeg[https://www.ffmpeg.org/]).
+The audio of each video was extracted using ffmpeg[https://www.ffmpeg.org/].
 `ffmpeg -i OMG_Empathy2019/Training/Videos/Subject_X_Story_X.mp4  -vn -acodec pcm_s16le -ar 16000 -ac 1 wav/Subject_X_Story_X.wav`
 `Speech` folder consists of the text of each video alongside a csv file with time offset values (timestamps) for the beginning and end of each spoken word, using Speech-to-text Google API [https://cloud.google.com/speech-to-text/]
 
